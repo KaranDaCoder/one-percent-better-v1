@@ -1,0 +1,39 @@
+Habits Questionaires;
+
+1: How much discipline and will-power is needed to follow this habit for at least 10 days?
+Options: 
+I fear, I might fail (8), 
+I think I can do it (4), 
+I am confident! (2)
+
+
+2: Have you ever tried to establish this habit before?
+Options: 
+Never (8), 
+Yes, but I failed (6),
+Yes, and I was somewhat successful (4)
+
+3: Are you trying to quit a bad habit or form a new one?
+ Options:
+ I am trying to form a new habit (4). 
+ I am trying to quit a bad habit (6).
+
+4: Do you have enough resources to follow this habit for at least 10 days?
+ Options:
+ No, I need to invest in time/money (6)
+ Yes, I am loaded (2), 
+
+
+ ---DATES---
+ It looks like you're using two different approaches to format the dates, which might be causing some confusion:
+
+formattedDate: You're using toISOString().slice(0, 10) which formats the date in UTC. So this is giving you 2024-12-27 in UTC.
+
+formattedDate1: You're using format() from date-fns, which is formatting the date using local timezone. Hence, it’s giving you 2024-12-26 (since it’s converting the UTC date to your local timezone, in your case, CST, which is UTC-6).
+
+Why the discrepancy?
+The formattedDate is being generated in UTC (because of .toISOString()), so it shows the UTC version of the date (2024-12-27).
+The formattedDate1 is using the local time (format() from date-fns), and it's converting the UTC date (2024-12-27T00:00:00Z) to your local timezone (CST), showing the previous day (2024-12-26).
+The key difference:
+toISOString() always returns the date in UTC.
+format() from date-fns formats the date based on the local timezone of the machine running the code.

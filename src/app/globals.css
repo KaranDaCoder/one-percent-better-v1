@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.react-date-picker {
+  border: none !important; /* Remove the default border */
+  width: 100%; /* Ensure it stretches to the container */
+  height: 100%; /* Match the container height */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.react-date-picker__wrapper {
+  border: 0.1px solid #d1d5db; /* Custom border */
+  border-radius: 0.375rem; /* Rounded corners (tailwind rounded-md equivalent) */
+  padding: 0.5rem; /* Padding for better spacing */
+  background-color: #fff; /* White background */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.react-date-picker__wrapper:focus-within {
+  border-color: #fb923c; /* Orange focus border */
+  box-shadow: 0 0 0 0.5px gray; /* Tailwind focus:ring effect */
 }
