@@ -1,6 +1,5 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { auth } from "@/auth";
 import Footer from "./(ui)/components/Footer";
 import Navbar from "./(ui)/components/Navbar";
 
@@ -19,8 +18,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   try {
-    const session = await auth();
-
+ 
     return (
       <html lang="en">
         <head>
@@ -30,7 +28,7 @@ export default async function RootLayout({ children }) {
         <body
           className={`${poppins.className} text-slate-700 overflow-x-hidden bg-white leading-none`}
         >
-          <Navbar session={session} />
+          <Navbar />
           <main className="min-h-[calc(100dvh-8rem)] mx-auto container p-4">
             {children}
           </main>

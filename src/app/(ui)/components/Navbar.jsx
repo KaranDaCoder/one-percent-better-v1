@@ -2,12 +2,14 @@ import Link from 'next/link'
 import React from 'react'
 import SignOut from './SignOut'
 import NavbarMobile from './NavbarMobile'
+import { auth } from '@/auth'
 
 
 
 
-const Navbar = async ({ session }) => {
-  // console.log(session)
+const Navbar = async () => {
+  const session = await auth();
+
   return (
     <div className="h-20 gap-4 sticky top-0 flex items-center justify-between px-4 z-[20] bg-white">
       <div className="w-16">

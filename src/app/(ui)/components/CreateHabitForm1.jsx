@@ -155,7 +155,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                   <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0'>
                     <label htmlFor="question1" className='text-slate-700 font-semibold w-full lg:w-3/4'>Categorize your habit</label>
                     <div className="flex flex-col flex-1 items-center justify-center h-full mt-1">
-                      <select name="habit_category" id="" className='border py-1 border-slate-300 font-semibold w-full rounded-md lg:w-auto text-center cursor-pointer focus:outline-none bg-white text-base' {...register('category', {})}>
+                      <select name="habit_category" id="" className='border py-2 lg:py-1 border-slate-300 font-semibold w-full rounded-md lg:w-auto text-center cursor-pointer focus:outline-none bg-white text-base' {...register('category', {})}>
                         <option value="Other">Other</option>
                         <option value="Health and Fitness">Health and Fitness</option>
                         <option value="Personal Growth and Learning">Personal Growth and Learning</option>
@@ -191,7 +191,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(discipline_willpower - 1) * 11.11}%, white ${(discipline_willpower - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {willPowerAndDeterminationLabels[Math.floor((discipline_willpower) / 4)]}
@@ -213,7 +213,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(tried_before - 1) * 11.11}%, white ${(tried_before - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {tried_before_labels[Math.floor((tried_before) / 4)]}
@@ -236,7 +236,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(frequency_everyday - 1) * 11.11}%, white ${(frequency_everyday - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {frequency_everyday_labels[Math.floor((frequency_everyday) / 4)]}
@@ -258,7 +258,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(quit_or_create - 1) * 11.11}%, white ${(quit_or_create - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {quit_or_create_labels[Math.floor((quit_or_create) / 4)]}
@@ -280,7 +280,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(resources_available - 1) * 11.11}%, white ${(resources_available - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {resources_available_labels[Math.floor((resources_available) / 4)]}
