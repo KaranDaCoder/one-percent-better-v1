@@ -145,7 +145,7 @@ const HabitSchema = new Schema({
 
 // Pre-save hook to calculate habit difficulty based on strength
 HabitSchema.pre('save', function (next) {
- if (this.initial_habit_strength >= 7) {
+ if (this.initial_habit_strength >= 8) {
   this.difficulty = 'Effortless';
  } else if (this.initial_habit_strength >= 4) {
   this.difficulty = 'Manageable';

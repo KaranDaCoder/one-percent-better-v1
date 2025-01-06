@@ -1,7 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { auth } from "@/auth";
-import { cookies } from "next/headers";
 import Footer from "./(ui)/components/Footer";
 import Navbar from "./(ui)/components/Navbar";
 
@@ -20,13 +19,11 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   try {
-    const cookieStore = await cookies();
     const session = await auth();
 
     return (
       <html lang="en">
         <head>
-          {/* <title>My App</title> */}
           <meta name="description" content="Welcome to my app" />
           <link rel="icon" href="/favicon.ico" />
         </head>
