@@ -28,7 +28,7 @@ export default async function RootLayout({ children }) {
           <link rel="icon" href="/favicon.ico" />
         </head>
         <body
-          className={`${poppins.className} antialiased text-slate-700 overflow-x-hidden bg-white leading-none`}
+          className={`${poppins.className} text-slate-700 overflow-x-hidden bg-white leading-none`}
         >
           <Navbar session={session} />
           <main className="min-h-[calc(100dvh-8rem)] mx-auto container p-4">

@@ -17,7 +17,7 @@ const Navbar = async ({ session }) => {
       {session ? (
         <>
           <nav className='hidden lg:flex w-2/3 h-1/2 justify-center items-center'>
-            <ul className='flex items-center justify-around tracking-wider gap-4 h-full w-5/6 rounded-full bg-orange-600 text-white font-medium'>
+            <ul className='flex items-center justify-around tracking-wider gap-4 h-full w-5/6 rounded-full bg-orange-500 text-white font-medium'>
               <Link href={'/dashboard'} className='capitalize text-slate-800 hover:text-white flex w-auto h-auto flex-col items-center justify-center hover:scale-110 transition-all duration-200'>
                 {/* <span className='text-4xl text-green-800'><MdDashboard/></span> */}
                 <span className='text-base'>dashboard</span>
