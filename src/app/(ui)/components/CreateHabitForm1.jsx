@@ -50,22 +50,22 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
 
 
   const onSubmit = async (data) => {
-    /*  try {
+    try {
        console.log("Form Submitted: ", data);
        const request = await fetch(`/api/habits`, {method : 'POST', cache: 'no-cache', redirect: 'follow', body: JSON.stringify(data) });
        const resp = await request.json();
        if(request.ok) {
          router.refresh();
          reset();
+         console.log("Form Submitted: ", data);
+         setStartHabitDrawer(false); // Close the drawer after submission
          return resp;
        } else {
          throw new Error(resp.error)
        }
      } catch (error) {
        console.log(error)
-     } */
-    console.log("Form Submitted: ", data);
-    // setStartHabitDrawer(false); // Close the drawer after submission
+     }
   };
 
 
@@ -170,15 +170,15 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                 </section>
                 {/* Questionaire */}
 
-                <section className="w-full border p-1 rounded-md bg-slate-100 flex flex-col gap-2 justify-start items-center">
-                  <div className="flex justify-between items-center w-full px-1">
-                    <h2 className='text-lg font-medium text-slate-600 '>calculate initial habit difficulty</h2>
+                <section className="w-full border p-1 rounded-lg bg-slate-100 shadow-lg flex flex-col gap-2 justify-start items-center py-3">
+                  <div className="flex justify-between items-center w-full">
+                    <h2 className='text-xl font-light text-slate-800 w-full text-center uppercase tracking-wide'>habit difficulty</h2>
                     <p>faqs?</p>
                   </div>
 
                   {/* Q1 */}
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
-                    <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Will power and determination required to follow this habit.</label>
+                  <div className='border-2 p-2 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center bg-orange-100'>
+                    <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Will power and determination required.</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-3">
                       <input
                         type="range"
@@ -189,9 +189,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         step="1"
                         {...register('discipline_willpower', { valueAsNumber: true })}
                         style={{
-                          background: `linear-gradient(to right, green ${(discipline_willpower - 1) * 11.11}%, gray ${(discipline_willpower - 1) * 11.11}%)`,
+                          background: `linear-gradient(to right, green ${(discipline_willpower - 1) * 11.11}%, white ${(discipline_willpower - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-2 appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {willPowerAndDeterminationLabels[Math.floor((discipline_willpower) / 4)]}
@@ -199,7 +199,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                     </div>
                   </div>
                   {/* Q2 */}
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='border-2 p-2 bg-blue-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Have you tried following this habit before?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -211,9 +211,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         step="1"
                         {...register('tried_before', { valueAsNumber: true })}
                         style={{
-                          background: `linear-gradient(to right, green ${(tried_before - 1) * 11.11}%, gray ${(tried_before - 1) * 11.11}%)`,
+                          background: `linear-gradient(to right, green ${(tried_before - 1) * 11.11}%, white ${(tried_before - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-2 appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {tried_before_labels[Math.floor((tried_before) / 4)]}
@@ -222,7 +222,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                   </div>
 
 
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='p-2 bg-pink-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Frequency of the habit daily?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -234,9 +234,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         step="1"
                         {...register('frequency_everyday', { valueAsNumber: true })}
                         style={{
-                          background: `linear-gradient(to right, green ${(frequency_everyday - 1) * 11.11}%, gray ${(frequency_everyday - 1) * 11.11}%)`,
+                          background: `linear-gradient(to right, green ${(frequency_everyday - 1) * 11.11}%, white ${(frequency_everyday - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-2 appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {frequency_everyday_labels[Math.floor((frequency_everyday) / 4)]}
@@ -244,7 +244,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                     </div>
                   </div>
 
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='border p-2 bg-fuchsia-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Are you creating or quitting?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -256,9 +256,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         step="1"
                         {...register('quit_or_create', { valueAsNumber: true })}
                         style={{
-                          background: `linear-gradient(to right, green ${(quit_or_create - 1) * 11.11}%, gray ${(quit_or_create - 1) * 11.11}%)`,
+                          background: `linear-gradient(to right, green ${(quit_or_create - 1) * 11.11}%, white ${(quit_or_create - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-2 appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {quit_or_create_labels[Math.floor((quit_or_create) / 4)]}
@@ -266,7 +266,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                     </div>
                   </div>
 
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='border p-2 bg-slate-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Do you have enough resources?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -278,9 +278,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         step="1"
                         {...register('resources_available', { valueAsNumber: true })}
                         style={{
-                          background: `linear-gradient(to right, green ${(resources_available - 1) * 11.11}%, gray ${(resources_available - 1) * 11.11}%)`,
+                          background: `linear-gradient(to right, green ${(resources_available - 1) * 11.11}%, white ${(resources_available - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-2 appearance-none"
+                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.35rem] appearance-none"
                       />
                       <p className="text-sm font-semibold w-auto  mt-1">
                         {resources_available_labels[Math.floor((resources_available) / 4)]}
@@ -289,13 +289,13 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                   </div>
 
 
+                </section>
                   <div className='border px-2 py-1 my-2 rounded-md shadow-2xl w-full h-full flex flex-row items-center justify-between bg-slate-700 text-white'>
                     <label htmlFor="question1" className='text-lg font-medium  w-full lg:w-3/4'>
                     intial habit difficulty
                     </label>
                     <p className={`h-full w-56 font-semibold tracking-widest uppercase text-center`}>{habitDifficulty}</p>
                   </div>
-                </section>
                 <div className="flex gap-2 mt-1 justify-around items-center">
                   <button
                     // type='submit'
