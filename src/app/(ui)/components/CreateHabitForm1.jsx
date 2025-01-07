@@ -24,7 +24,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
     }
   })
 
-  const willPowerAndDeterminationLabels = ["It's a nightmare!", "I think it is doable.", "None at all!"];
+  const willPowerAndDeterminationLabels = ["It's a nightmare!", "I think it is doable.", "Bring it on!"];
   const resources_available_labels = ["Invest in resources", "I think it's doable.", "I have everything i need"];
   const tried_before_labels = ["Never, it's my first time.", "Yes, but failed to follow.", "Yes, I follow it right now"];
   const frequency_everyday_labels = ["More than 5 times daily", "2 to 5 times daily", "Once in a day"];
@@ -129,7 +129,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
 
                 <section className='flex flex-col gap-2'>
                   {/* Start-Date */}
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0'>
+                  <div className='border p-2 rounded-md w-full flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0'>
                     <label htmlFor="question1" className='text-slate-700 text-base font-semibold w-full lg:w-3/4'> When do you plan to start?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-around w-full  h-full mt-1 border rounded-md  py-2 px-4 border-slate-300">
                       <input
@@ -140,7 +140,7 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                           // valueAsDate: true,
 
                         })}
-                        className="cursor-pointer w-fit outline-none font-semibold bg-white"
+                        className="cursor-pointer w-full text-center h-full outline-none font-semibold bg-white"
                       />
 
                     </div>
@@ -152,10 +152,10 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                   </div>
 
                   {/* Category */}
-                  <div className='border p-2 bg-white rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0'>
+                  <div className='border p-2 rounded-md bg-white w-full flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0'>
                     <label htmlFor="question1" className='text-slate-700 font-semibold w-full lg:w-3/4'>Categorize your habit</label>
-                    <div className="flex flex-col flex-1 items-center justify-center h-full mt-1">
-                      <select name="habit_category" id="" className='border py-2 lg:py-1 border-slate-300 font-semibold w-full rounded-md lg:w-auto text-center cursor-pointer focus:outline-none bg-white text-base' {...register('category', {})}>
+                    <div className="flex flex-col flex-1 items-center justify-center h-full mt-1 py-1">
+                      <select name="habit_category" id="" className='border-slate-300 font-semibold w-full rounded-md lg:w-auto text-center cursor-pointer focus:outline-none bg-white text-base' {...register('category', {})}>
                         <option value="Other">Other</option>
                         <option value="Health and Fitness">Health and Fitness</option>
                         <option value="Personal Growth and Learning">Personal Growth and Learning</option>
@@ -170,14 +170,14 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                 </section>
                 {/* Questionaire */}
 
-                <section className="w-full border p-1 rounded-lg bg-slate-100 shadow-lg flex flex-col gap-2 justify-start items-center py-3">
+                <section className="w-full border p-1 rounded-lg bg-slate-200 flex flex-col gap-3 justify-start items-center py-3">
                   <div className="flex justify-between items-center w-full">
                     <h2 className='text-xl font-light text-slate-800 w-full text-center uppercase tracking-wide'>habit difficulty</h2>
                     <p>faqs?</p>
                   </div>
 
                   {/* Q1 */}
-                  <div className='border-2 p-2 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center bg-orange-100'>
+                  <div className='p-2 rounded-md  w-full flex flex-col lg:flex-row lg:items-center bg-green-400 hover:scale-105 transition-all duration-300'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Will power and determination required.</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-3">
                       <input
@@ -193,13 +193,13 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         }}
                         className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
-                      <p className="text-sm font-semibold w-auto  mt-1">
+                      <p className="text-xs font-semibold w-auto mt-2">
                         {willPowerAndDeterminationLabels[Math.floor((discipline_willpower) / 4)]}
                       </p>
                     </div>
                   </div>
                   {/* Q2 */}
-                  <div className='border-2 p-2 bg-blue-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='p-2 bg-blue-200 rounded-md  w-full flex flex-col lg:flex-row lg:items-center hover:scale-105 transition-all duration-300'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Have you tried following this habit before?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -215,14 +215,14 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         }}
                         className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
-                      <p className="text-sm font-semibold w-auto  mt-1">
+                      <p className="text-xs font-semibold w-auto mt-2">
                         {tried_before_labels[Math.floor((tried_before) / 4)]}
                       </p>
                     </div>
                   </div>
 
 
-                  <div className='p-2 bg-pink-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='p-2 bg-pink-200 rounded-md  w-full flex flex-col lg:flex-row lg:items-center hover:scale-105 transition-all duration-300'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Frequency of the habit daily?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -238,13 +238,13 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         }}
                         className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
-                      <p className="text-sm font-semibold w-auto  mt-1">
+                      <p className="text-xs font-semibold w-auto mt-2">
                         {frequency_everyday_labels[Math.floor((frequency_everyday) / 4)]}
                       </p>
                     </div>
                   </div>
 
-                  <div className='border p-2 bg-fuchsia-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='p-2 bg-fuchsia-300 rounded-md  w-full flex flex-col lg:flex-row lg:items-center hover:scale-105 transition-all duration-300'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Are you creating or quitting?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -260,13 +260,13 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         }}
                         className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
-                      <p className="text-sm font-semibold w-auto  mt-1">
+                      <p className="text-xs font-semibold w-auto mt-2">
                         {quit_or_create_labels[Math.floor((quit_or_create) / 4)]}
                       </p>
                     </div>
                   </div>
 
-                  <div className='border p-2 bg-slate-200 rounded-md shadow-sm w-full flex flex-col lg:flex-row lg:items-center'>
+                  <div className='p-2 bg-orange-300 rounded-md  w-full flex flex-col lg:flex-row lg:items-center hover:scale-105 transition-all duration-300'>
                     <label htmlFor="question1" className='tracking-wide  text-sm font-semibold w-full lg:w-2/3'>Do you have enough resources?</label>
                     <div className="flex flex-col gap-1 flex-1 items-center justify-center h-full mt-2">
                       <input
@@ -280,9 +280,9 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
                         style={{
                           background: `linear-gradient(to right, green ${(resources_available - 1) * 11.11}%, white ${(resources_available - 1) * 11.11}%)`,
                         }}
-                        className="cursor-pointer w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
+                        className="cursor-grab w-full transition-all duration-1000 ease-in-out rounded-full h-[0.30rem] lg:h-1 appearance-none"
                       />
-                      <p className="text-sm font-semibold w-auto  mt-1">
+                      <p className="text-xs font-semibold w-auto mt-2">
                         {resources_available_labels[Math.floor((resources_available) / 4)]}
                       </p>
                     </div>
@@ -290,11 +290,11 @@ const CreateHabitForm1 = ({ setStartHabitDrawer, startHabitDrawer, session }) =>
 
 
                 </section>
-                  <div className='border px-2 py-1 my-2 rounded-md shadow-2xl w-full h-full flex flex-row items-center justify-between bg-slate-700 text-white'>
-                    <label htmlFor="question1" className='text-lg font-medium  w-full lg:w-3/4'>
-                    intial habit difficulty
+                  <div className='px-2 mb-2 w-full h-full flex lg:items-center lg:flex-row flex-col text-slate-700'>
+                    <label htmlFor="initial_habit_difficulty" className='text-base font-semibold tracking-wide text-slate-700 w-full lg:w-3/4'>
+                      Initial difficulty of the habit will be
                     </label>
-                    <p className={`h-full w-56 font-semibold tracking-widest uppercase text-center`}>{habitDifficulty}</p>
+                  <p className={`h-full lg:w-1/2 w-full py-2 px-3 rounded-md bg-green-600/50 font-semibold tracking-wide uppercase text-center`}>{habitDifficulty}</p>
                   </div>
                 <div className="flex gap-2 mt-1 justify-around items-center">
                   <button
