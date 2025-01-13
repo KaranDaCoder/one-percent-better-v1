@@ -9,7 +9,7 @@ const robotoSlab = Roboto_Slab({
 export default function Home() {
   return (
     <main className="bg-inherit lg:p-0">
-      <p>home page</p>
+      <p>home page 1</p>
     </main>
   );
 }

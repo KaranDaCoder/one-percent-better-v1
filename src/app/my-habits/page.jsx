@@ -2,7 +2,9 @@ import React from 'react'
 
 const HabitsPage = () => {
   return (
-    <div>HabitsPage</div>
+    <main className=''>
+      <h1 className="uppercase text-xl font-light tracking-wider">my habits</h1>
+    </main>
   )
 }
 
