@@ -13,7 +13,7 @@ const DashboardPage = () => {
       </div>
       {/* Snapshot of Progress */}
       <div className="h-auto py-1">
-        <h1 className="uppercase text-xl mb-1">snapshot of your progress</h1>
+        <h1 className="uppercase text-xl mb-1 font-semibold">snapshot of your progress</h1>
         <div className="h-full grid grid-cols-1 lg:grid-cols-4 gap-2">
 
           <div className="w-full h-full border flex flex-col justify-center items-center gap-1 py-2 bg-slate-50 border-slate-700 rounded-lg">
@@ -51,7 +51,7 @@ const DashboardPage = () => {
 
       {/* Active and Upcoming trackers */}
       <div className="h-auto py-1">
-        <h1 className="uppercase text-xl mb-1">Your habit trackers</h1>
+        <h1 className="uppercase text-xl mb-1 font-semibold">Your habit trackers</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           <div className="w-full h-auto border bg-slate-50 border-slate-700 rounded-lg py-2">
             <h1 className="text-center font-medium capitalize">Active habit trackers</h1>
@@ -83,7 +83,7 @@ const DashboardPage = () => {
 
       {/* Habits by category */}
       <div className="h-auto py-1">
-        <h1 className="uppercase text-xl mb-1">Your habits</h1>
+        <h1 className="uppercase text-xl mb-1 font-semibold">Your habits</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           <div className="w-full h-auto border bg-slate-50 border-slate-700 rounded-lg py-2">
             <h1 className="text-center font-medium capitalize">Habits by category</h1>
