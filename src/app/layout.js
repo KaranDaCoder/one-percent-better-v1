@@ -29,9 +29,9 @@ export default async function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${poppins.className} bg-slate-100 px-2 lg:px-0 min-h-screen text-slate-800/90 antialiased`}
+        className={`${poppins.className} bg-white px-2 lg:px-0 min-h-screen text-slate-800/90 antialiased`}
       >
-        <main className="min-h-[calc(100dvh-4rem)] container mx-auto">
+        <main className="min-h-[calc(100dvh-4rem)] container mx-auto bg-white">
           <Navbar/>
           {children}
         </main>

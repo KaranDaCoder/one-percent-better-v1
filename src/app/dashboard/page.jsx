@@ -1,12 +1,13 @@
-import { FlameIcon, SignpostBig, Smile, TrendingUp, Zap } from "lucide-react"
+import { FlameIcon, SignpostBig, Smile, SmilePlus, TrendingUp, Zap } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
+import Link from "next/link"
 
 
 const DashboardPage = () => {
   return (
     <main className='flex flex-col gap-4
     '>
-      <h1 className="uppercase text-xl font-light tracking-wider">dashboard</h1>
+      <h1 className="uppercase text-xl font-medium tracking-wider">dashboard</h1>
       <div className="w-full flex flex-col">
         <h1 className="text-4xl tracking-widest font-semibold">Hello, Karan.</h1>
         <p className="text-base text-muted-foreground">Today is January 13, 2025 and we hope you are doing amazing.</p>
@@ -16,7 +17,7 @@ const DashboardPage = () => {
         <h1 className="uppercase text-xl mb-1 font-semibold">snapshot of your progress</h1>
         <div className="h-full grid grid-cols-1 lg:grid-cols-4 gap-2">
 
-          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 py-2 bg-slate-50 border-slate-700 rounded-lg">
+          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 lg:py-2 py-1 bg-white border-slate-700 rounded-lg">
             <div className="flex items-center justify-center gap-2">
             <Smile className="h-16 w-16" fill="white" strokeWidth='0.75'/>
             <h1 className="text-5xl font-extrabold">12</h1>
@@ -24,21 +25,21 @@ const DashboardPage = () => {
             <p className="text-lg uppercase"> habits</p>
           </div>
 
-          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 py-2 bg-slate-50 border-slate-700 rounded-lg">
+          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 lg:py-2 py-1 bg-white border-slate-700 rounded-lg">
             <div className="flex items-center justify-center gap-2">
             <SignpostBig className="h-16 w-16" fill="white" strokeWidth='0.75'/>
             <h1 className="text-5xl font-extrabold">54</h1>
             </div>
             <p className="text-lg uppercase">habit trackers</p>
           </div>
-          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 py-2 bg-slate-50 border-slate-700 rounded-lg">
+          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 lg:py-2 py-1 bg-white border-slate-700 rounded-lg">
             <div className="flex items-center justify-center gap-2">
             <Zap className="h-16 w-16" fill="white" strokeWidth='0.75'/>
             <h1 className="text-5xl font-extrabold">4</h1>
             </div>
             <p className="text-lg uppercase">completion streak</p>
           </div>
-          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 py-2 bg-slate-50 border-slate-700 rounded-lg">
+          <div className="w-full h-full border flex flex-col justify-center items-center gap-1 lg:py-2 py-1 bg-white border-slate-700 rounded-lg">
             <div className="flex items-center justify-center gap-2">
             <TrendingUp className="h-16 w-16" fill="white" strokeWidth='0.75'/>
             <h1 className="text-5xl font-extrabold">86.88%</h1>
@@ -81,7 +82,7 @@ const DashboardPage = () => {
         </div>
       </div>
 
-      {/* Habits by category */}
+      {/* Habits by category and difficulty */}
       <div className="h-auto py-1">
         <h1 className="uppercase text-xl mb-1 font-semibold">Your habits</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
@@ -111,6 +112,13 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="fixed top-1/2 w-auto h-auto rounded-full left-1 bg-slate-700 text-white hover:bg-slate-800">
+        <Link href={'/new-habit'} className="flex gap-2 py-2 px-2 items-center uppercase justify-center">
+        <SmilePlus size={25}/>
+          <p className="hidden lg:flex">new habit</p>
+        </Link>
       </div>
     </main>
 

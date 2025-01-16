@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { LogIn } from 'lucide-react';
-// import NavbarMobile from './'; // Assuming NavbarMobile is in the same directory
 import { navLinks } from '@/staticDataUi/NavLink'; // Import navLinks from your data
 import NavbarMobile from './ui/NavbarMobile';
 
@@ -8,7 +7,7 @@ const Navbar = () => {
   const session = true; // Simulating session state
 
   return (
-    <div className="h-20 flex items-center justify-between sticky top-0 bg-slate-100 mb-4 z-50">
+    <div className="h-20 flex items-center justify-between sticky top-0 bg-white mb-4 z-50">
       {/* Logo */}
       <div className="flex items-center justify-center">
         <Link href={'/'} className="text-6xl font-semibold tracking-wider w-fit">
